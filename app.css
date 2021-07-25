@@ -1,0 +1,129 @@
+:root{
+    --navbar: rgba(255, 255, 255, 0.6);
+}
+html{
+    background-image: linear-gradient(to right bottom,#00688B,#03A89E,#CD3700,#ff6103);
+    background-repeat:no-repeat;
+    background-position: center;
+    height: 100%;
+}
+body{
+    margin: 0;
+}
+header{
+    background-color: var(--navbar);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+nav{
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--navbar);
+    width: 100%;
+    transform:scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-out;
+   
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+nav a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+nav a:hover{
+    color:rgba(0, 0, 0, 0.219);
+}
+.navbar-toggle:checked ~ nav{
+transform: scale(1,1);
+
+}
+.navbar-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+.navbar-toggle{
+    display: none;
+}
+.navbar-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+.navbar-toggle-label span,
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after{
+    display:block;
+    background:white;
+    height:2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after{
+    content:"";
+    position:absolute;
+}
+.navbar-toggle-label span::before{
+    bottom: 7px;
+}
+
+.navbar-toggle-label span::after{
+    top: 7px;
+}
+
+@media screen and (min-width: 800px) {
+    .navbar-toggle-label{
+        display: none;
+    }
+    header{
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px,1fr) 1fr;
+    }
+    .logo{
+        grid-column: auto;
+        justify-self: start;
+        position: relative;
+        left:10px;
+    }
+    nav{
+        all: unset;
+        grid-column: 2/5;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    nav a{
+        opacity: 1;
+    }
+    nav ul{
+        display: flex;
+        position: relative;
+        right: 10px;
+       
+    }
+    nav li {
+        margin-bottom: 0;
+        margin-left:3.2em;
+    }
+}
