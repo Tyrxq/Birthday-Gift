@@ -14,6 +14,7 @@ body{
     margin: 0;
 }
 header{
+    display:grid;
     background-color: var(--navbar);
     text-align: center;
     position: fixed;
@@ -25,7 +26,7 @@ header{
     font-family:'Great Vibes', cursive;
     /* font-family: 'Fuggles', cursive; */
     font-size:2.5em;
-    right: 250px;
+    
 }
 nav{
     position: absolute;
@@ -74,7 +75,7 @@ transform: scale(1,1);
 .navbar-toggle-label{
     position: absolute;
     top: 0;
-    left: 600px;
+    right: 4%;
     margin-left: 1em;
     height:100%;
     display:flex;
