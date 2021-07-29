@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@100;300&family=Style+Script&display=swap');
 
 
 :root{
     --navbar: rgba(255, 255, 255, 0.6);
+    --scroll: rgb(0, 0, 0,1);
 }
-html{
+body{
     background-image: linear-gradient(to right bottom,#00688B,#03A89E,#CD3700,#ff6103);
     background-repeat:no-repeat;
     background-position: center;
-    height: 400%;
+    height: 600%;
 }
 body{
     margin: 0;
@@ -20,29 +21,35 @@ header{
     position: fixed;
     width: 100%;
     z-index: 999;
+    top: 0;
+    backdrop-filter: blur(5px);
 }
 .logo {
     position: relative;
     font-family:'Great Vibes', cursive;
-    /* font-family: 'Fuggles', cursive; */
     font-size:2.5em;
     
 }
+
 nav{
     position: absolute;
     text-align: center;
+    z-index: 999;
     top: 100%;
     left: 0;
-    background: var(--navbar);
+    background: var(--scroll);
+    z-index: 50;
     width: 100%;
     transform:scale(1,0);
     transform-origin: top;
     transition: transform 400ms ease-out;
+    
 }
 nav ul{
     margin: 0;
     padding: 0;
     list-style: none;
+   
 }
 nav li{
     margin-bottom: 1em;
@@ -59,15 +66,18 @@ nav a{
     transition: opacity 150ms ease-in-out;
 }
 nav a:hover{
-    color:rgba(0, 0, 0, 0.219);
+    color:rgba(255, 255, 255, .219);
 }
 .navbar-toggle:checked ~ nav{
 transform: scale(1,1);
+
+
 
 }
 .navbar-toggle:checked ~ nav a{
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
+    
 }
 .navbar-toggle{
     display: none;
@@ -124,9 +134,13 @@ transform: scale(1,1);
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        
     }
     nav a{
         opacity: 1;
+    }
+    nav a:hover{
+        color:rgba(0, 0, 0, .219);
     }
     nav ul{
         display: flex;
@@ -138,4 +152,283 @@ transform: scale(1,1);
         margin-bottom: 0;
         margin-left:3.2em;
     }
+    .container {
+        position:relative;
+        display:grid;
+        justify-content:center;
+        align-items: center;
+        max-width:1200px;
+        flex-wrap:wrap;
+        z-index: 1;
+    }
+    .container .card
+    {
+        position:relative;
+        top:30%;
+        width:480px;
+        height:500px;
+        margin-bottom: 500px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius:20%;
+        background: rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid rgba(255, 255, 255, 0.5);
+        border-left: 3px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter:blur(5px);
+    }
+    .container .card .content{
+        padding: 20px;
+        text-align: center;
+        transition:0.5s;
+    }
+    .container .card .content h2
+    {
+        position:absolute;
+        top: -80px;
+        right:80px;
+        font-size: 10em;
+        color:rgba(0, 0, 0, 0.075);
+        pointer-events:none;
+    
+    }
+    .container .card .content h3
+    {
+        font-size: 3em;
+        color:white;
+        z-index: 1;
+    }
+    .container .card .content p
+    {
+        font-size:1em;
+        color:white;
+        font-weight:300;
+        font-family: 'Style Script', cursive;
+    }
+    .container .card .content a
+    {
+       position: relative;
+       display: inline-block;
+       padding: 8px 20px;
+       margin-top: 15px;
+       background:#fff ;
+       color: #000;
+       border-radius: 20px;
+       text-decoration: none;
+       font-weight: 500;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+    }
+    .profile-pic{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        left:15%;
+        top:0%;
+        /* Make the background image cover the area of the <div>, and clip the excess */
+        border-radius: 50%;
+        
+      }
+
+    
+}
+/*------------------------------------------------------------------------- body css -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top:20;
+    left:10;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+body::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom , #00688B,#03A89E,#CD3700,#ff6103);
+    clip-path: circle(60% at right 0%);
+}
+.container {
+    position:relative;
+    display:grid;
+    justify-content:center;
+    align-items: center;
+    max-width:1200px;
+    flex-wrap:wrap;
+    z-index: 10;
+}
+.container .card
+{
+    position:relative;
+    top:30%;
+    width:750px;
+    height:750px;
+    margin-bottom: 600px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius:20%;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter:blur(5px);
+}
+.container .card .content{
+    padding: 20px;
+    text-align: center;
+    transition:0.5s;
+}
+.container .card .content h2
+{
+    position:absolute;
+    top: -100px;
+    right:80px;
+    font-size: 10em;
+    color:rgba(0, 0, 0, 0.075);
+    pointer-events:none;
+    
+
+}
+.container .card .content h4
+{
+    position:absolute;
+    top: -100px;
+    right:80px;
+    font-size: 10em;
+    color:rgba(0, 0, 0, 0.075);
+    pointer-events:none;
+    font-family: 'Style Script', cursive;
+
+}
+ .container .card .content h3
+{
+    font-size: 2.5em;
+    color:white;
+    font-family: 'Style Script', cursive;
+    z-index: 1;
+}
+.container .card .content p
+{
+    font-size:1em;
+    color:white;
+    font-weight:300;
+}
+.container .card .content a
+{
+   position: relative;
+   display: inline-block;
+   padding: 8px 20px;
+   margin-top: 15px;
+   background:#fff ;
+   color: #000;
+   border-radius: 20px;
+   text-decoration: none;
+   font-weight: 500;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+}
+@media screen and (max-width: 800px) {
+    .container {
+        position:relative;
+        display:grid;
+        justify-content:center;
+        align-items: center;
+        max-width:1200px;
+        flex-wrap:wrap;
+        z-index: 1;
+    }
+    .container .card
+    {
+        position:relative;
+        top:20%;
+        width:450px;
+        height:450px;
+        margin-bottom: 600px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius:20%;
+        background: rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid rgba(255, 255, 255, 0.5);
+        border-left: 3px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter:blur(5px);
+    }
+    .container .card .content{
+        padding: 20px;
+        text-align: center;
+        transition:0.5s;
+    }
+    .container .card .content h2
+    {
+        position:absolute;
+        top: -80px;
+        right:80px;
+        font-size: 10em;
+        color:rgba(0, 0, 0, 0.075);
+        pointer-events:none;
+    
+    }
+    .container .card .content h3
+    {
+        font-size: 1.5em;
+        color:white;
+        font-family: 'Style Script', cursive;
+        z-index: 1;
+    }
+    .container .card .content h4
+    {
+    position:absolute;
+    top: -100px;
+    right:40px;
+    font-size: 6em;
+    color:rgba(0, 0, 0, 0.075);
+    pointer-events:none;
+    font-family: 'Style Script', cursive;
+    }
+    .container .card .content p
+    {
+        font-size:1em;
+        color:white;
+        font-weight:300;
+    }
+    .container .card .content a
+    {
+       position: relative;
+       display: inline-block;
+       padding: 8px 20px;
+       margin-top: 15px;
+       background:#fff ;
+       color: #000;
+       border-radius: 20px;
+       text-decoration: none;
+       font-weight: 500;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+  .profile-pic{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left:50px;
+    /* Make the background image cover the area of the <div>, and clip the excess */
+    border-radius: 50%;
+    
+  }
+ 
+
 }
